@@ -7,10 +7,11 @@ A mod for Kerbal Space Program which integrates KW Rocketry's multipart fairings
 This is a derivative work distributed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).  Please see that link of the included `LICENSE` file for more info.
 
 The assets in this mod are from KW Rocketry, by Winston and Kickasskyle
+
 KW Rocketry is now maintained by linuxgurugamer with community help
 
-[Original KW Rocketry thread](http://forum.kerbalspaceprogram.com/index.php?showtopic=46894)
-[New KW Rocketry Redux thread](http://forum.kerbalspaceprogram.com/index.php?showtopic=137762)
+* [Original KW Rocketry thread](http://forum.kerbalspaceprogram.com/index.php?showtopic=46894)
+* [New KW Rocketry Redux thread](http://forum.kerbalspaceprogram.com/index.php?showtopic=137762)
 
 The assets have been modified to better work with the Simple Adjustable Fairings plugin with additional minor tweaks.
 
