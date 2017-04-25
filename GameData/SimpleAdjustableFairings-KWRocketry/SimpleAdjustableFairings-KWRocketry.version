@@ -1,0 +1,19 @@
+{
+  "NAME": "Simple Adjustable Fairings - KW Rocketry Pack",
+  "DOWNLOAD" : "https://github.com/blowfishpro/SimpleAdjustableFairings-KWRocketry/releases",
+  "URL": "https://raw.githubusercontent.com/blowfishpro/SimpleAdjustableFairings-KWRocketry/master/GameData/SimpleAdjustableFairings-KWRocketry/SimpleAdjustableFairings-KWRocketry.version",
+  "GITHUB" : {
+    "USERNAME"   : "blowfishpro",
+    "REPOSITORY" : "SimpleAdjustableFairings-KWRocketry"
+  },
+  "VERSION": {
+    "MAJOR": 1,
+    "MINOR": 0,
+    "PATCH": 0
+  },
+  "KSP_VERSION": {
+    "MAJOR": 1,
+    "MINOR": 2,
+    "PATCH": 2
+  }
+}

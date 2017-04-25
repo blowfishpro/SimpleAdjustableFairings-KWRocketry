@@ -26,6 +26,10 @@ This mod requires the Simple Adjustable Fairings plugin to work.  It does not re
 
 ## Changelog
 
+### v1.0.0
+
+* Bump version for a non-preview release
+
 ### v0.1
 
 * Initial release
