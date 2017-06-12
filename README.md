@@ -26,6 +26,10 @@ This mod requires the Simple Adjustable Fairings plugin to work.  It does not re
 
 ## Changelog
 
+### v1.0.1
+
+* Bump AVC version for KSP 1.3
+
 ### v1.0.0
 
 * Bump version for a non-preview release
