@@ -26,6 +26,10 @@ This mod requires the Simple Adjustable Fairings plugin to work.  It does not re
 
 ## Changelog
 
+### v1.0.3
+
+* Fix .version file only marking KSP 1.4.0 as compatible
+
 ### v1.0.2
 
 * Bump AVC version for KSP 1.4.3
