@@ -1,0 +1,42 @@
+language: csharp
+env:
+  global:
+    - KSP_VERSION="$(cat KSP_VERSION | xargs)"
+    - PATH="${PATH}:/opt/ksp-ci/bin"
+    - VERSION="$(git describe --tags)"
+    - BUILD_DIR="/var/tmp/simple_adjustable_fairings-kw/build"
+notifications:
+  email: false
+install:
+  - mkdir -pv '/var/tmp/ksp-ci' '/var/tmp/ksp-ci/extract'
+  - curl 'https://github.com/blowfishpro/ksp-ci/archive/v1.1.0.zip' --location -o '/var/tmp/ksp-ci/ksp-ci.zip'
+  - unzip '/var/tmp/ksp-ci/ksp-ci.zip' -d '/var/tmp/ksp-ci/extract'
+  - mkdir -pv '/opt/ksp-ci'
+  - cp -rv /var/tmp/ksp-ci/extract/*/bin '/opt/ksp-ci'
+  - sudo $(which install-ckan)
+script:
+  - mkdir -pv "${BUILD_DIR}"
+  - mkdir -pv "${BUILD_DIR}/ckan_ksp"
+  - mkdir -pv "${BUILD_DIR}/assemble"
+  - mkdir -pv "${BUILD_DIR}/package"
+
+  - make-ksp-install "${BUILD_DIR}/ckan_ksp/sa_fairings-kw-deps" 'sa_fairings-kw-deps' "${KSP_VERSION}"
+  - install-netkan-deps 'sa_fairings-kw-deps' "${TRAVIS_BUILD_DIR}/NetKAN/SimpleAdjustableFairings-KWRocketry.netkan"
+  - mkdir -pv "${BUILD_DIR}/assemble/SimpleAdjustableFairings-KWRocketry"
+  - cp -r "${BUILD_DIR}/ckan_ksp/sa_fairings-kw-deps/GameData" "${BUILD_DIR}/assemble/SimpleAdjustableFairings-KWRocketry"
+  - cp -r "${TRAVIS_BUILD_DIR}/GameData/SimpleAdjustableFairings-KWRocketry" "${BUILD_DIR}/assemble/SimpleAdjustableFairings-KWRocketry/GameData"
+  - cp -v "${TRAVIS_BUILD_DIR}/README.md" "${TRAVIS_BUILD_DIR}/LICENSE" "${BUILD_DIR}/assemble/SimpleAdjustableFairings-KWRocketry/"
+  - cp -v "${TRAVIS_BUILD_DIR}/README.md" "${TRAVIS_BUILD_DIR}/LICENSE" "${BUILD_DIR}/assemble/SimpleAdjustableFairings-KWRocketry/GameData/SimpleAdjustableFairings-KWRocketry/"
+  - (cd "${BUILD_DIR}/assemble/SimpleAdjustableFairings-KWRocketry" && zip -rv "${BUILD_DIR}/package/SimpleAdjustableFairings-KWRocketry.zip" .)
+after_success:
+  - mkdir -pv "${BUILD_DIR}/release"
+  - cp -v "${BUILD_DIR}/package/SimpleAdjustableFairings-KWRocketry.zip" "${BUILD_DIR}/release/SimpleAdjustableFairings-KWRocketry_${VERSION}.zip"
+deploy:
+  - provider: releases
+    skip_cleanup: true
+    api_key: ${GITHUB_DEPLOY_TOKEN}
+    file: ${BUILD_DIR}/release/*.zip
+    file_glob: true
+    name: "Simple Adjustable Fairings - KW Rocketry Fairing Pack ${TRAVIS_TAG} for KSP 1.4.x"
+    on:
+      tags: true
