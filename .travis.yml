@@ -9,7 +9,7 @@ notifications:
   email: false
 install:
   - mkdir -pv '/var/tmp/ksp-ci' '/var/tmp/ksp-ci/extract'
-  - curl 'https://github.com/blowfishpro/ksp-ci/archive/v1.1.0.zip' --location -o '/var/tmp/ksp-ci/ksp-ci.zip'
+  - curl 'https://github.com/blowfishpro/ksp-ci/archive/v1.1.1.zip' --location -o '/var/tmp/ksp-ci/ksp-ci.zip'
   - unzip '/var/tmp/ksp-ci/ksp-ci.zip' -d '/var/tmp/ksp-ci/extract'
   - mkdir -pv '/opt/ksp-ci'
   - cp -rv /var/tmp/ksp-ci/extract/*/bin '/opt/ksp-ci'
