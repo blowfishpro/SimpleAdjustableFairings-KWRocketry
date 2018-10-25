@@ -9,7 +9,7 @@ notifications:
   email: false
 install:
   - mkdir -pv '/var/tmp/ksp-ci' '/var/tmp/ksp-ci/extract'
-  - curl 'https://github.com/blowfishpro/ksp-ci/archive/v1.1.0.zip' --location -o '/var/tmp/ksp-ci/ksp-ci.zip'
+  - curl 'https://github.com/blowfishpro/ksp-ci/archive/v1.1.1.zip' --location -o '/var/tmp/ksp-ci/ksp-ci.zip'
   - unzip '/var/tmp/ksp-ci/ksp-ci.zip' -d '/var/tmp/ksp-ci/extract'
   - mkdir -pv '/opt/ksp-ci'
   - cp -rv /var/tmp/ksp-ci/extract/*/bin '/opt/ksp-ci'
@@ -20,7 +20,7 @@ script:
   - mkdir -pv "${BUILD_DIR}/assemble"
   - mkdir -pv "${BUILD_DIR}/package"
 
-  - make-ksp-install "${BUILD_DIR}/ckan_ksp/sa_fairings-kw-deps" 'sa_fairings-kw-deps' "${KSP_VERSION}"
+  - make-ksp-install "${BUILD_DIR}/ckan_ksp/sa_fairings-kw-deps" 'sa_fairings-kw-deps' "$(echo '<%=ksp_version.to_s(3)%>'|fill-version)"
   - install-netkan-deps 'sa_fairings-kw-deps' "${TRAVIS_BUILD_DIR}/NetKAN/SimpleAdjustableFairings-KWRocketry.netkan"
   - mkdir -pv "${BUILD_DIR}/assemble/SimpleAdjustableFairings-KWRocketry"
   - cp -r "${BUILD_DIR}/ckan_ksp/sa_fairings-kw-deps/GameData" "${BUILD_DIR}/assemble/SimpleAdjustableFairings-KWRocketry"

@@ -21,10 +21,14 @@ This mod may be distributed with the Simple Adjustable Fairings plugin included,
 
 This mod requires the Simple Adjustable Fairings plugin to work.  It does not require KW Rocketry to be installed.  It is designed to work with specific versions of both Kerbal Space Program and the Simple Adjustable Fairings Plugin:
 
-* KSP Version 1.4.3
-* Simple Adjustable Fairings Version v1.1.0
+* KSP Version 1.5
+* Simple Adjustable Fairings Version v1.3.0
 
 ## Changelog
+
+### v1.1.0
+
+* Bump .version file for KSP 1.5
 
 ### v1.0.3
 
