@@ -37,6 +37,6 @@ deploy:
     api_key: ${GITHUB_DEPLOY_TOKEN}
     file: ${BUILD_DIR}/release/*.zip
     file_glob: true
-    name: "Simple Adjustable Fairings - KW Rocketry Fairing Pack ${TRAVIS_TAG} for KSP 1.5.x"
+    name: "Simple Adjustable Fairings - KW Rocketry Fairing Pack ${TRAVIS_TAG} for KSP $(echo '<%=ksp_version.to_s(2)%>' | fill-version).x"
     on:
       tags: true
