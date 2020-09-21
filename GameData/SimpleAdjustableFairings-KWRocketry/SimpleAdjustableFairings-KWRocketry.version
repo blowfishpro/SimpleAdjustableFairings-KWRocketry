@@ -6,7 +6,7 @@
     "USERNAME"   : "blowfishpro",
     "REPOSITORY" : "SimpleAdjustableFairings-KWRocketry"
   },
-  "VERSION": "1.2.1",
-  "KSP_VERSION_MIN": "1.8.0",
-  "KSP_VERSION_MAX": "1.8.99",
+  "VERSION": "1.3.0",
+  "KSP_VERSION_MIN": "1.10.0",
+  "KSP_VERSION_MAX": "1.10.99",
 }
